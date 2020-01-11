@@ -28,23 +28,54 @@
                 Protocol Presentation
             </div>
             <div class="card-body">
-                <h5 class="card-title">Name of Protocol</h5>
-                <p class="card-text">Text + Schemas</p>
+                <h5 class="card-title">Real-Time Messaging Protocol </h5>
+                <p class="card-text"> Initially developed by Macromedia, a graphics,
+                  multimedia and web development software company and purchased in 2005 by
+                  <a href='https://www.adobe.com/devnet/rtmp.html'>Adobe Inc.</a> the current rights owner,
+                  Real-Time Messaging Protocol (RTMP) was used for audio streaming. Right after,
+                  it became popular and was used for video streaming as it provides low-latency content.
+                  The data stream used to flow between a source and a server, previously the Flash player and the Flash server.
+                  Each video and audio document is sent from the source to the server into a reversible small web format (swf) file.
+                  Users who desire to watch the stream request the server (fig 6).
+                   However, from the server to the users, the used protocol isn’t RTMP but other ones such as Dash or HLS and are not detailed in this section.
+                  <br>
+                   Actually, not every device support Flash technology, Apple might be the precursor
+                    for <a href='https://www.apple.com/hotnews/thoughts-on-flash/'>not using</a>
+                    Flash technology on their mobile devices as it is a 100% proprietary technology, which means is owned entirely by one entity.
+                    Currently, new applications don't use Adobe Flash anymore and
+                    it will be officially deprecated on December 31, 2020 and HTML5 appears to be the solution.
+
+                </p>
             </div>
         </div>
         <div class="card-deck">
             <div class="card">
-                <img class="card-img-top" src="images/Communications.png" alt="">
+                <img class="card-img-top" src="images/Handshake protocol.png" alt="">
                 <div class="card-body">
-                    <h4 class="card-title">Figure 1</h4>
-                    <p class="card-text">Some example text.</p>
+                    <h4 class="card-title">Figure 1
+                      <small>Handshake protocol</small>
+                    </h4>
+                    <p class="card-text">
+                      The beginning of each RTMP connection is started by a handshake.
+                      To initialise the handshake, the client sends the C0 and C1 chunks. C0 chunk contains
+                      version information, while C1 contains synchronization parameters and random data. C2 is sent
+                      when the client receives S1 and consists in verification that sums up the previous chunks.
+                      The chunked messages are all in a constant size: 1 byte for C0 and S0, 1536 bytes for the others.
+                    </p>
                 </div>
             </div>
             <div class="card">
-                <img class="card-img-top" src="images/Handshake protocol.png" alt="">
+                <img class="card-img-top" src="images/Communications.png" alt="">
                 <div class="card-body">
-                    <h4 class="card-title">Figure 2</h4>
-                    <p class="card-text">Some example text.</p>
+                    <h4 class="card-title">Figure 2
+                      <small>Streaming transaction</small>
+                    </h4>
+                    <p class="card-text">
+                      In order to send streaming contents, a connection should be established. This connection is opened
+                      with NetConnection(open) and closed with NetConnection(close). Audio and video streaming contents flow
+                      across a channel, created by NetStream(play). Commands such as play or pause
+                      also flow through the channel.
+                    </p>
                 </div>
             </div>
         </div>
@@ -62,7 +93,7 @@
                     <h4 class="card-title">Figure 4</h4>
                     <p class="card-text">Some example text.</p>
                 </div>
-                
+
             </div>
         </div>
         <div class="card-columns">
@@ -71,26 +102,26 @@
                     <h5 class="card-title text-center">Technical specifications</h5>
                     <p class="card-text text-justify">
                         RTMP is TCP based-protocol that works with a 3-step process once the TCP connection is established
-                        (cf figure 1). 
+                        (cf figure 1).
 
                         <ol>
                             <li>First the handshake to establish connection between the client and the server (cf figure 2).</li>
                             <li>Then the connection</li>
-                            <li>Finally the stream.</li> 
+                            <li>Finally the stream.</li>
                         </ol>
                     </p>
-                    <p class="card-text text-justify">   
-                        It encapsulates MP3/AAC audio and MP4/FLV video multimedia streams that can be decoded on the web 
-                        by a Flash plugin. Flash Player is a browser plugin to run applications inside a webpage. The Flash .swf 
-                        application uses code to load the RTMP data and the Flash Player system will automatically decode 
-                        that into live audio/video. To ensure smooth video streaming despite bandwidth fluctuations, 
-                        RTMP keeps the connection between the streaming server and the video player continuously open 
-                        during the process. Audio, video and others data are delivered separately and are broken into 
-                        segments by the protocol to be transmitted with consistence. These segments have the same duration 
+                    <p class="card-text text-justify">
+                        It encapsulates MP3/AAC audio and MP4/FLV video multimedia streams that can be decoded on the web
+                        by a Flash plugin. Flash Player is a browser plugin to run applications inside a webpage. The Flash .swf
+                        application uses code to load the RTMP data and the Flash Player system will automatically decode
+                        that into live audio/video. To ensure smooth video streaming despite bandwidth fluctuations,
+                        RTMP keeps the connection between the streaming server and the video player continuously open
+                        during the process. Audio, video and others data are delivered separately and are broken into
+                        segments by the protocol to be transmitted with consistence. These segments have the same duration
                         and allow to adapt the stream according to the quality of the connection of the client. <br>
-                        Nowadays with the deprecation of flash, RTMP will not be used for video delivery to end users 
-                        anymore when doing a live stream with CDN. RTMP will stream the content to a server and then 
-                        the stream will be transformed to HLS(cf figure 3). 
+                        Nowadays with the deprecation of flash, RTMP will not be used for video delivery to end users
+                        anymore when doing a live stream with CDN. RTMP will stream the content to a server and then
+                        the stream will be transformed to HLS(cf figure 3).
                     </p>
                 </div>
             </div>
@@ -99,17 +130,17 @@
                     <h5 class="card-title text-center">Advantages</h5>
                     <h6>Advantages</h6>
                     <p class="card-text text-justify">
-                        
+
                         RTMP is amongst the best in providing multicast support since it allows to deliver a stream to many
                         users without initiating a connection for each of them. <br>
-                        In fact, there is a direct pointer from the server to the player and the latter only consider 
-                        data corresponding to that pointer and doesn’t rely on any buffer to cache files locally on the 
-                        user computer. Thus the server and the player are in a constant connection and monitoring can provide 
+                        In fact, there is a direct pointer from the server to the player and the latter only consider
+                        data corresponding to that pointer and doesn’t rely on any buffer to cache files locally on the
+                        user computer. Thus the server and the player are in a constant connection and monitoring can provide
                         precise and specific statistics what a user did during the video.
                     </p>
                     <h6>Disadvantages</h6>
                     <p class="card-text text-justify">
-                        
+
                         Due to its default usage of 1935 port, RTMP is not accessible when restrictive firewalls are working.
                     </p>
               </div>
@@ -118,18 +149,18 @@
                 <div class="card-body">
                     <h5 class="card-title text-center">Usecases and fields of application</h5>
                     <p class="card-text text-justify">
-                        The main feature of RTMP is to provide an adaptive bitrate streaming service where users can do 
-                        live streams and deliver them to several platforms(cf figure 4). In the case of a video streaming, the streamer 
+                        The main feature of RTMP is to provide an adaptive bitrate streaming service where users can do
+                        live streams and deliver them to several platforms(cf figure 4). In the case of a video streaming, the streamer
                         may ask the service provider to be able to read the user chat and be able to communicate with viewers.
-                        This requires a low-latency real time messaging protocol, RTMP. Flash player may be discontinued 
-                        but the gaming community still uses it. On the users side, they do not want an data to be temporarily 
-                        stored in the dedicated browser folder in their computers and would rather stay on sync with 
-                        the stream and not see lost frames. The users prefer low quality videos over a laggy stream, 
-                        their priority is to be able to see what the player is doing and comment it in as little time 
-                        as possible.  This protocol’s pointer is always on sync with the stream, therefore, it does not 
-                        display in-time lost content and causes cumulative delays. 
-                        Unlike other progressive media players, there is none to very little buffering in RTMP, user experience 
-                        is optimized, and poor network statistics are accounted for. This use case’s aim is to display 
+                        This requires a low-latency real time messaging protocol, RTMP. Flash player may be discontinued
+                        but the gaming community still uses it. On the users side, they do not want an data to be temporarily
+                        stored in the dedicated browser folder in their computers and would rather stay on sync with
+                        the stream and not see lost frames. The users prefer low quality videos over a laggy stream,
+                        their priority is to be able to see what the player is doing and comment it in as little time
+                        as possible.  This protocol’s pointer is always on sync with the stream, therefore, it does not
+                        display in-time lost content and causes cumulative delays.
+                        Unlike other progressive media players, there is none to very little buffering in RTMP, user experience
+                        is optimized, and poor network statistics are accounted for. This use case’s aim is to display
                         the low latency and adaptation to bandwidth changes RTMP is able to provide.
 
                     </p>
@@ -149,21 +180,22 @@
         </div>
         <div class="card">
             <div class="card-header">
-                HowTo
+                (HowTo) RTMP deployment
             </div>
             <div class="card-body">
                 <h4 class="card-title">Architecture</h4>
                 <img src="./images/architecture.png">
-                In the above image, the classical architecture of RTMP is presented. The latter involves three actors:
+                <h5 class="card-title">Figure 6</h5>
+                In the figure 6, the classical architecture of RTMP is presented. The latter involves three actors:
                 <ul>
-                    <li>A <b>source</b>: he is the one who wants to broadcast the video. To do this, it sends an RTMP stream to the second actor, which is the server.</li>
-                    <li>An <b>RTMP Media Server</b>: it receives the RTMP stream, converts it into another format which is supported by HTML5 and sends it to clients which ask the stream.</li>
-                    <li>A <b>client</b>: he is the one who wants to see the stream. To do this, he asks the RTMP Media Server and he receives the RTMP stream converted in another format which is then displayed in its browser. </li>
+                    <li>A <b>source</b>: is the one that wants to broadcast the video. To do this, it sends an RTMP stream to the second actor, which corresponds to the server.</li>
+                    <li>An <b>RTMP Media Server</b>: is the receiver of the RTMP stream. It converts the stream into another format which is supported by HTML5 and sends it to clients who ask the stream.</li>
+                    <li>A <b>client</b>: is the one who wants to see the stream. To do this, he asks the RTMP Media Server and he receives the RTMP stream converted in another format which is then displayed in its browser. </li>
                 </ul>
                 <br>
                 In our case, the conversion is not done by the RTMP Media Server but with the player available in the webpage. It converts the RTMP stream into MP4 segments and feeds the segments into an HTML5 video element.
                 <h4 class="card-title">Prerequisites</h4>
-                Install the last version of <a href="https://nodejs.org/en/download/">Node</a>
+                Install the latest version of <a href="https://nodejs.org/en/download/">Node</a> and in the command line, type "npm install" and "npm install node-media-server" to install the required packages.
                 <h4 class="card-title">Open Broadcaster Software</h4>
                 <p class="card-text"><a href="https://obsproject.com/fr">OBS</a> is an open-source software used for
                     video recording and live streaming. It will be used to push the RTMP source of your webcam to the
@@ -202,8 +234,9 @@
                 <hr>
                 <h4 class="card-title">Start Streaming</h4>
                 Go back to <strong>OBS</strong> and click on <em>Start Streaming</em>.<br>
-                If you followed each step, in your RTMP server terminal you can see the following lines:
+                If you have followed each step successfully, you can see the following lines in your RTMP server terminal:
                 <img src="images/results_rtmp.png" style="width:70%">
+                You should not close the terminal, as the server runs.
                 <h4 class="card-title">See the stream in the html page.</h4>
                 Open the <em>template.html</em> file and your stream is available on the webpage!
             </div>
