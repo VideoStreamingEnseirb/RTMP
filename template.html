@@ -120,7 +120,7 @@
                         segments by the protocol to be transmitted with consistence. These segments have the same duration
                         and allow to adapt the stream according to the quality of the connection of the client. <br>
                         Nowadays with the deprecation of flash, RTMP will not be used for video delivery to end users
-                        anymore when doing a live stream with CDN. RTMP will stream the content to a server and then
+                        anymore when doing a live stream with a central delivery network CDN. RTMP will stream the content to a server and then
                         the stream will be transformed to HLS(cf figure 3).
                     </p>
                 </div>
@@ -140,8 +140,13 @@
                     </p>
                     <h6>Disadvantages</h6>
                     <p class="card-text text-justify">
-
+                        The drawbacks said in the introduction are RTMP cannot be ran on iDevices and HTML5 cannot play RTMP.
                         Due to its default usage of 1935 port, RTMP is not accessible when restrictive firewalls are working.
+                        RTMP is vulnerable to bandwidth issue, the stream cannot be cast when the internet connection lacks speed.
+                        The latency is slightly increased as the server has to process the RTMP stream and then follows
+                        Dash or HLS protocol to satisfy the clients stream demands.
+
+                        </optgroup>
                     </p>
               </div>
             </div>
@@ -247,7 +252,7 @@
             var videoElement = document.getElementById('videoElement');
             var flvPlayer = flvjs.createPlayer({
                 type: 'flv',
-                url: 'http://localhost:8000/live/STREAM_NAME.flv'
+                url: 'http://192.168.61.108:8000/live/STREAM_NAME.flv'
             });
             flvPlayer.attachMediaElement(videoElement);
             flvPlayer.load();
