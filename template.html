@@ -84,14 +84,14 @@
                 <img class="card-img-top" src="images/Protocol stack.png" alt="">
                 <div class="card-body">
                     <h4 class="card-title">Figure 3</h4>
-                    <p class="card-text">Some example text.</p>
+                    <p class="card-text"></p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-body">
                     <img class="card-img-top" src="images/Transcodage.png" alt="">
                     <h4 class="card-title">Figure 4</h4>
-                    <p class="card-text">Some example text.</p>
+                    <p class="card-text"></p>
                 </div>
 
             </div>
@@ -120,14 +120,14 @@
                         segments by the protocol to be transmitted with consistence. These segments have the same duration
                         and allow to adapt the stream according to the quality of the connection of the client. <br>
                         Nowadays with the deprecation of flash, RTMP will not be used for video delivery to end users
-                        anymore when doing a live stream with a central delivery network CDN. RTMP will stream the content to a server and then
+                        anymore when doing a live stream with a content delivery network CDN. RTMP will stream the content to a server and then
                         the stream will be transformed to HLS(cf figure 3).
                     </p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title text-center">Advantages</h5>
+                    <h5 class="card-title text-center">Assets and drawbacks</h5>
                     <h6>Advantages</h6>
                     <p class="card-text text-justify">
 
@@ -252,7 +252,7 @@
             var videoElement = document.getElementById('videoElement');
             var flvPlayer = flvjs.createPlayer({
                 type: 'flv',
-                url: 'http://192.168.61.108:8000/live/STREAM_NAME.flv'
+                url: 'http://localhost/live/STREAM_NAME.flv'
             });
             flvPlayer.attachMediaElement(videoElement);
             flvPlayer.load();
