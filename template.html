@@ -130,9 +130,10 @@
                     <h5 class="card-title text-center">Assets and drawbacks</h5>
                     <h6>Advantages</h6>
                     <p class="card-text text-justify">
-
-                        RTMP is amongst the best in providing multicast support since it allows to deliver a stream to many
-                        users without initiating a connection for each of them. In this sense, it is mainly used for live streaming. <br>
+                        RTMP is useful for streaming live content at a low latency, offering adaptative bitrate streaming (ABS)
+                        which means it provides the best quality according to the viewers internet speed.
+                        It is amongst the best in providing multicast support since it allows to deliver a stream to many
+                        users without initiating a connection for each of them.  <br>
                         In fact, there is a direct pointer from the server to the player and the latter only consider
                         data corresponding to that pointer and doesn’t rely on any buffer to cache files locally on the
                         user computer. Thus the server and the player are in a constant connection with adaptative
@@ -141,9 +142,9 @@
                     </p>
                     <h6>Disadvantages</h6>
                     <p class="card-text text-justify">
-                        The drawbacks said in the introduction are RTMP cannot be ran on iDevices and HTML5 cannot play RTMP.
+                        The drawbacks said in the introduction section are RTMP cannot be ran on iDevices and HTML5 cannot play RTMP.
                         Due to its default usage of 1935 port, RTMP is not accessible when restrictive firewalls are working.
-                        RTMP is vulnerable to bandwidth issue, the stream cannot be cast when the internet connection lacks speed.
+                        RTMP is vulnerable to bandwidth issue, the stream requires a minimum internet speed.
                         The latency is slightly increased as the server has to process the RTMP stream and then follows
                         Dash or HLS protocol to satisfy the clients stream demands.
 
