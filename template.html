@@ -59,7 +59,7 @@
                         <small>Handshake protocol</small>
                     </h4>
                     <p class="card-text">
-                        The beginning of each RTMP connection is initialized by a handshake.
+                        Each RTMP connection is initialized with a handshake.
                         During the handshake, the client sends the C0 and C1 chunks. C0 chunks contain
                         version information, while C1 chunks contain synchronization parameters and random data. C2 chunks are sent
                         when the client receives an S1 and are utilized in the global chunk verification.
@@ -185,9 +185,9 @@
                     <h5 class="card-title text-center">Usecases and fields of application</h5>
                     <p class="card-text text-justify">
                         RTMP's main feature is to provide an adaptive bitrate streaming service for users to stream
-                        live content to several platforms(cf figure 4). In the case of a video
+                        live content to several platforms(cf figure 4). In the case of video
                         streaming, the streamer
-                        may need to communicate with viewers. She/he can ask the service provider for access to veiwer chats and live comments.
+                        may need to communicate with viewers. She/he can ask the service provider for access to viewer chats and live comments.
                         This requires a low-latency Real-Time Messaging Protocol, RTMP. Flash player may be discontinued
                         but the gaming community still uses it. On the users side, they do not want a data to be
                         temporarily
