@@ -42,7 +42,7 @@
                     However, from the server to the users, the used protocol isn’t RTMP but other ones such as Dash or
                     HLS and are not detailed in this section.
                     <br>
-                    Actually, not every device support Flash technology, Apple might be the precursor
+                    Actually, not every device supports Flash technology, Apple might be the precursor
                     for <a href='https://www.apple.com/hotnews/thoughts-on-flash/'>not using</a>
                     Flash technology on their mobile devices as it is a 100% proprietary technology, which means is
                     owned entirely by one entity.
@@ -88,17 +88,38 @@
         </div>
         <div class="card-deck">
             <div class="card">
-                <img class="card-img-top" src="images/Protocol stack.png" alt="">
+                <img id= "image3" class="card-img-top" src="images/Protocol_stack.png" alt="">
                 <div class="card-body">
-                    <h4 class="card-title">Figure 3</h4>
-                    <p class="card-text"></p>
+                    <h4 class="card-title">Figure 3
+                      <small>Protocol stack</small>
+                    </h4>
+                    <p class="card-text">
+                      In current usecases, RTMP is not delivered to the clients in its raw form.
+                      From left to right, streamers initiate a connection with a server in order to publish their content to be adapted for clients.
+                      Before being sent, RTMP payloads are split into default-sized fragments: 128 bytes for video and 64 bytes for audio data.
+                      The stream is continuous from the streamer to the server that processes the RTMP stream and adapts it for the clients.
+                      Clients can now access the stream by requesting the server, the data will flow thanks to HLS or Dash protocol.
+                      When encryption is needed (RTMPE is an encrypter version RTMP), these payloads are encrypted before being packetted by IP
+                      and decrypted after being decapsulated by IP.
+                    </p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-body">
-                    <img class="card-img-top" src="images/Transcodage.png" alt="">
-                    <h4 class="card-title">Figure 4</h4>
-                    <p class="card-text"></p>
+                    <img class="card-img-top" src="images/ABS.png" alt="">
+                    <h4 class="card-title">Figure 4
+                     <small>Adaptive Bitrate Streaming</small>
+                    </h4>
+                    <p class="card-text">The user's bandwith can be highly variable, and in the case of non-adaptive bitrate
+                      streaming, the client choses manually the video quality settings regardless of her/his internet connection
+                      quality. This can be quite off-putting and annoying, especially for picky users that do not wish to
+                      re-set the video resolution whenever it starts buffering. With adaptive bitrate streaming, the content
+                      is available server-side at multiple resolutions (3 in our case for the sake of the example), with each
+                      version fractioned according to the minimal segment length (in time). With each bandwidth variation, the
+                      adequat video segment is sent to the client. If the bandwidth is high, a high quality segment is sent, if
+                      it is low, it will then be a low quality segment. This method allows the user to watch a multi-resolution
+                      video with very little chances of it buffering.
+                    </p>
                 </div>
 
             </div>
@@ -108,7 +129,7 @@
                 <div class="card-body">
                     <h5 class="card-title text-center">Technical specifications</h5>
                     <p class="card-text text-justify">
-                        RTMP is TCP based-protocol that works with a 3-step process once the TCP connection is
+                        RTMP is a TCP based protocol that works with a 3-step process once the TCP connection is
                         established
                         (cf figure 1).
 
@@ -145,11 +166,10 @@
                     <p class="card-text text-justify">
                         RTMP is useful for streaming live content at a low latency, offering adaptative bitrate streaming (ABS)
                         which means it provides the best quality according to the viewers internet speed.
-                        It is amongst the best in providing multicast support since it allows to deliver a stream to many
-                        users without initiating a connection for each of them.  <br>
+                        <br>
                         In fact, there is a direct pointer from the server to the player and the latter only consider
                         data corresponding to that pointer and doesn’t rely on any buffer to cache files locally on the
-                        user computer. Thus the server and the player are in a constant connection with adaptative
+                        user's computer. Thus the server and the player are in a constant connection with adaptative
                         bitrate streaming and monitoring can provide
                         precise and specific statistics about what a user did during the video.
                     </p>
@@ -174,8 +194,8 @@
                         streaming, the streamer
                         may ask the service provider to be able to read the user chat and be able to communicate with
                         viewers.
-                        This requires a low-latency real time messaging protocol, RTMP. Flash player may be discontinued
-                        but the gaming community still uses it. On the users side, they do not want an data to be
+                        This requires a low-latency Real-Time Messaging Protocol, RTMP. Flash player may be discontinued
+                        but the gaming community still uses it. On the users side, they do not want a data to be
                         temporarily
                         stored in the dedicated browser folder in their computers and would rather stay on sync with
                         the stream and not see lost frames. The users prefer low quality videos over a laggy stream,
