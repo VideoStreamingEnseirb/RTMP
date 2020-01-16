@@ -88,25 +88,40 @@
         </div>
         <div class="card-deck">
             <div class="card">
-                <img class="card-img-top" src="images/Protocol stack.png" alt="">
+                <img class="card-img-top" src="images/Protocol_stack.png" alt="">
                 <div class="card-body">
-                    <h4 class="card-title">Figure 3</h4>
+                    <h4 class="card-title">Figure 3 <small>Protocol stack</small></h4>
                     <p class="card-text">
                         In current usecases, RTMP is not deliver to clients in its raw form. 
-                        From left to right, streamers initiate a connection with a server to publish their content to be adapted for clients.
-                        Before being send, RTMP payloads are split into default-sized fragments : 128 bytes for video and 64 bytes for audio data.
-                        The stream is continuous from the streamer to the server that processes the RTMP stream and adapt it for the clients.
-                        Clients can now access the stream by requesting it to the server. 
-                        When encryption is needed (RTMPE is an encrypter version RTMP), these payloads are crypted before being packetted by IP 
-                        and decrypted after being decapsulated by IP.
+                        From left to right, streamers initiate a connection with a server to 
+                        publish their content to be adapted for clients. Before being send, 
+                        RTMP payloads are split into default-sized fragments : 128 bytes for 
+                        video and 64 bytes for audio data. The stream is continuous from the 
+                        streamer to the server that processes the RTMP stream and adapt it 
+                        for the clients. Clients can now access the stream by requesting it 
+                        to the server. 
+                        When encryption is needed (RTMPE is an encrypter version RTMP),
+                        these payloads are encrypted before being packetted by IP and decrypted 
+                        after being decapsulated by IP.
                     </p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-body">
                     <img class="card-img-top" src="images/Transcodage.png" alt="">
-                    <h4 class="card-title">Figure 4</h4>
-                    <p class="card-text"></p>
+                    <h4 class="card-title">Figure 4
+                     <small>Adaptive Bitrate Streaming</small>
+                    </h4>
+                    <p class="card-text">The user's bandwith can be highly variable, and in the case of non-adaptive bitrate
+                      streaming, the client choses manually the video quality settings regardless of her/his internet connection
+                      quality. This can be quite off-putting and annoying, especially for picky users that do not wish to
+                      re-set the video resolution whenever it starts buffering. With adaptive bitrate streaming, the content
+                      is available server-side at multiple resolutions (3 in our case for the sake of the example), with each
+                      version fractioned according to the minimal segment length (in time). With each banwidth variation, the
+                      adequat video segment is sent to the client. If the bandwidth is high, a high quality segment is sent, if
+                      it is low, it will then be a low quality segment. This method allows the user to watch a multi-resolution
+                      video with very little chances of it buffering.
+                    </p>
                 </div>
 
             </div>
