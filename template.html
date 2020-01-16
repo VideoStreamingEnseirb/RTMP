@@ -88,17 +88,19 @@
         </div>
         <div class="card-deck">
             <div class="card">
-                <img class="card-img-top" src="images/Protocol_stack.png" alt="">
+                <img id= "image3" class="card-img-top" src="images/Protocol_stack.png" alt="">
                 <div class="card-body">
-                    <h4 class="card-title">Figure 3</h4>
+                    <h4 class="card-title">Figure 3
+                      <small>Protocol stack</small>
+                    </h4>
                     <p class="card-text">
-                        In current usecases, RTMP is not delivered to the clients in its raw form. 
-                        From left to right, streamers initiate a connection with a server in order to publish their content to be adapted for clients.
-                        Before being sent, RTMP payloads are split into default-sized fragments: 128 bytes for video and 64 bytes for audio data.
-                        The stream is continuous from the streamer to the server that processes the RTMP stream and adapts it for the clients.
-                        Clients can now access the stream by requesting the server. 
-                        When encryption is needed (RTMPE is an encrypter version RTMP), these payloads are encrypted before being packetted by IP 
-                        and decrypted after being decapsulated by IP.
+                      In current usecases, RTMP is not delivered to the clients in its raw form.
+                      From left to right, streamers initiate a connection with a server in order to publish their content to be adapted for clients.
+                      Before being sent, RTMP payloads are split into default-sized fragments: 128 bytes for video and 64 bytes for audio data.
+                      The stream is continuous from the streamer to the server that processes the RTMP stream and adapts it for the clients.
+                      Clients can now access the stream by requesting the server, the data will flow thanks to HLS or Dash protocol.
+                      When encryption is needed (RTMPE is an encrypter version RTMP), these payloads are encrypted before being packetted by IP
+                      and decrypted after being decapsulated by IP.
                     </p>
                 </div>
             </div>
@@ -164,11 +166,10 @@
                     <p class="card-text text-justify">
                         RTMP is useful for streaming live content at a low latency, offering adaptative bitrate streaming (ABS)
                         which means it provides the best quality according to the viewers internet speed.
-                        It is amongst the best in providing multicast support since it allows to deliver a stream to many
-                        users without initiating a connection for each of them.  <br>
+                        <br>
                         In fact, there is a direct pointer from the server to the player and the latter only consider
                         data corresponding to that pointer and doesn’t rely on any buffer to cache files locally on the
-                        user computer. Thus the server and the player are in a constant connection with adaptative
+                        user's computer. Thus the server and the player are in a constant connection with adaptative
                         bitrate streaming and monitoring can provide
                         precise and specific statistics about what a user did during the video.
                     </p>
@@ -193,8 +194,8 @@
                         streaming, the streamer
                         may ask the service provider to be able to read the user chat and be able to communicate with
                         viewers.
-                        This requires a low-latency real time messaging protocol, RTMP. Flash player may be discontinued
-                        but the gaming community still uses it. On the users side, they do not want an data to be
+                        This requires a low-latency Real-Time Messaging Protocol, RTMP. Flash player may be discontinued
+                        but the gaming community still uses it. On the users side, they do not want a data to be
                         temporarily
                         stored in the dedicated browser folder in their computers and would rather stay on sync with
                         the stream and not see lost frames. The users prefer low quality videos over a laggy stream,
