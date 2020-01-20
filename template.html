@@ -32,12 +32,12 @@
                 <p class="card-text"> Initially developed by Macromedia, a graphics,
                     multimedia and web development software company and purchased in 2005 by
                     <a href='https://www.adobe.com/devnet/rtmp.html'>Adobe Inc.</a> the current rights owner,
-                    Real-Time Messaging Protocol (RTMP) was used for audio streaming. It quickly became popular and was used for video streaming as it provided, and still deos, low-latency content.
+                    Real-Time Messaging Protocol (RTMP) was used for audio streaming. It quickly became popular and was used for video streaming as it provided, and still does, low-latency content.
                     The data stream flows between a source and a server, previously the Flash player and the
                     Flash server.
                     Each video and audio document is sent from the source to the server in a reversible small web
                     format (swf) file.
-                    Users who wish to view the stream request the server (fig 6).
+                    Users who wish to view the stream request the server (fig 5).
                     However, from the server to the users, the used protocol isn’t RTMP, it can be Dash or
                     HLS and is not detailed in this section.
                     <br>
@@ -124,7 +124,7 @@
             </div>
         </div>
         <div class="card-columns">
-            <div class="card">
+            <div class="card" id="cardmiddle">
                 <div class="card-body">
                     <h5 class="card-title text-center">Technical specifications</h5>
                     <p class="card-text text-justify">
@@ -156,8 +156,8 @@
                     </p>
                 </div>
             </div>
-            <div class="card">
-                <div class="card-body">
+            <div class="card" id="cardmiddle">
+                <div class="card-body" >
                     <h5 class="card-title text-center">Assets and drawbacks</h5>
                     <h6>Advantages</h6>
                     <p class="card-text text-justify">
@@ -180,7 +180,7 @@
                     </p>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" id="cardmiddle">
                 <div class="card-body">
                     <h5 class="card-title text-center">Usecases and fields of application</h5>
                     <p class="card-text text-justify">
@@ -222,9 +222,9 @@
                 The following section describes the project deployment, with sufficient details on each step. You need at least two
                 computers: one for the deployment of the source and the server and another one for the client.
                 <img src="./images/architecture.png">
-                <center><h5 class="card-title">Figure 6</h5></center>
+                <center><h5 class="card-title">Figure 5</h5></center>
                 <br>
-                In figure 6, the basic RTMP architecture is presented. It involves three actors:
+                In figure 5, the basic RTMP architecture is presented. It involves three actors:
                 <ul>
                     <li>A <b>source</b>: the video streamer. It achieves its role by sending a RTMP
                         stream to the second actor, which corresponds to the server.</li>
