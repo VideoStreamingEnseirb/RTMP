@@ -174,7 +174,8 @@
                         Major RTMP drawbacks, already mentionned in the introduction, are that it cannot be run on iDevices and HTML5 cannot natively play RTMP.
                         Due to its default usage of 1935 port, RTMP is not accessible when restrictive firewalls are working.
                         RTMP is vulnerable to bandwidth issue, the stream requires a minimum internet speed.
-                        The latency is slightly increased as the server has to process the stream after the transition from Dash or HLS to RTMP.
+                        RTMP is TCP-based and uses anicast and not multicast. This can be a scaling issue, because the number
+                        of users is equal to the number of opened connexions.
 
                         </optgroup>
                     </p>
